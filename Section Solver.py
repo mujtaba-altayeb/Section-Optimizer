@@ -43,3 +43,17 @@ def calculate(gk, qk, l, b, h, cover, Ast_dia, Asc_dia, fcu, fy):
 
     print(f"n_bars_t = {n_bars_t}")
     print(f"n_bars_c = {n_bars_c}")
+
+
+gk = float(input("Dead Load (KN/m-1) : "))
+qk = float(input("Imposed Load (KN/m-1) : "))
+l = float(input("Span (m) : "))
+b = float(input("breadth (mm) : "))
+h = float(input("height (mm) : "))
+cover = float(input("cover (mm) : "))
+Ast_dia = float(input("Diameter for tension bars (mm) : "))
+Asc_dia = float(input("Diameter for compression bars (mm) : "))
+fcu = float(input("fcu (Nmm-2) : "))
+fy = float(input("fy (Nmm-2) : "))
+
+calculate(gk, qk, l, b, h, cover, Ast_dia, Asc_dia, fcu, fy)
