@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block head %}{% endblock %}
+
+{% block body %}
+
+<div class="container">
+      <div class="row">
+        <div class="col-lg-12" id="s1">
+            <div class="card" style="width: 50rem;">
+                <script>
+                    sketch_section("s1", "big",{{ clct[0]["Cover"] }}, {{ clct[0]["b"] }}, {{ clct[0]["h"] }}, {{ clct[0]["number of tension bars"] }}, {{ clct[0]["number of compression bars"] }}, {{ clct[0]["tension bars diameter"] }}, {{ clct[0]["compression bars diameter"] }})
+                </script>
+                <div class="card-body">
+                    <h5 class="card-title">Optimum Section : </h5>
+                    <p class="card-text">Brand = {{ clct[0]["Selected brand"] }}</p>
+                    <p class="card-text">Cover = {{ clct[0]["Cover"] }}, Breadth = {{ clct[0]["b"] }} , Height = {{ clct[0]["h"] }}</p>
+                    <p class="card-text">Tension Bars Diameter = {{ clct[0]["tension bars diameter"] }}, <strong>No = {{ clct[0]["number of tension bars"] }}</strong></p>
+                    <p class="card-text">Compression Bars Diameter = {{ clct[0]["tension bars diameter"] }}, <strong>No = {{ clct[0]["number of compression bars"] }}</strong></p>
+                </div>
+            </div>
+        </div>
+      </div>
+            {% for design in clct[1] %}
+    <div class="row">
+            <div class="col-lg-12" id="s2">
+                  <script>
+                    sketch_section("s2", "small",{{ design["Cover"] }}, {{ design["b"] }}, {{ design["h"] }}, {{ design["number of tension bars"] }}, {{ design["number of compression bars"] }}, {{ design["tension bars diameter"] }}, {{ design["compression bars diameter"] }})
+                  </script>
+            </div>
+            </div>
+          {% endfor %}
+    </div>
+
+
+
+{% endblock %}
